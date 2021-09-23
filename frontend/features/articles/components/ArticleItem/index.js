@@ -1,7 +1,10 @@
 // Libraries
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import { convertDateToUTC, formatMonth } from '../../../../utils/dateHelper'
+
+const BASE_URL = process.env.REACT_APP_BASE_SERVER_URL
 
 /**
  * Consider extracting the title and button
@@ -20,6 +23,7 @@ const ArticleItem = ({ article }) => {
   }
 
   const {
+    id,
     title,
     introduction,
     image_url,
@@ -33,15 +37,19 @@ const ArticleItem = ({ article }) => {
         <h2 className='article-title'>{title}</h2>
         <p className='article-subtitle'>{`${_formatAuthorName(author)} | ${_formatDateToDisplay(created_at)}`}</p>
         <p className='article-intro'>{introduction}</p>
-        <a className='read-more-btn' href='#' target='_blank'>
+        <Link
+          className='read-more-btn'
+          to={`/articles/detail/${id}`}
+          target='_blank'
+        >
           Read more
-        </a>
+        </Link>
       </div>
       <div className='img-block'>
         <img src={image_url} />
       </div>
     </div>
-  )
+  );
 };
 
 export default ArticleItem;

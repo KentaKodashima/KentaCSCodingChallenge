@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
-import { fetchArticles } from '../../actions'
-import { ArticleList, SearchBar } from './components/'
-import { convertDateToUTC } from '../../utils/dateHelper'
-import { sortOptions } from './components/SearchBar/sortOptions'
+import { fetchArticles } from '../../actions';
+import { ArticleList, SearchBar } from './components/';
+import { convertDateToUTC } from '../../utils/dateHelper';
+import { sortOptions } from './components/SearchBar/sortOptions';
 
 /**
  * An article
@@ -93,10 +93,10 @@ const Articles = ({ fetchArticles, articles: fetchedArticles }) => {
    * @param { FormEvent<HTMLFormElement> } e - HTML Form submission event
   */
   const handleSortValueChange = (e) => {
-    const newValue = e.target.value
-    setSortValue(newValue)
+    const newValue = e.target.value;
+    setSortValue(newValue);
 
-    _sortArticles(newValue, articles)
+    _sortArticles(newValue, articles);
   };
   
   return (

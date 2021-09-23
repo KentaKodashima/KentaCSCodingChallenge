@@ -37,11 +37,13 @@
       width: $widthBtn;
       line-height: $heightBtn;
       text-align: center;
+      transition: all 0.3s;
 
       &:hover {
+        box-sizing: border-box;
         color: $colorWhite;
         background-color: $colorBlack;
-        border: none;
+        border: 2px solid transparent;
       }
     }
   }
