@@ -1,1 +1,10 @@
+// Common styles
+@import "./scss/variables";
+@import "./scss/base";
+
+// Home
 @import "../features/home/components/Home/styles";
+
+// Articles
+@import "../features/articles/styles";
+@import "../features/articles/components/ArticleItem/styles";

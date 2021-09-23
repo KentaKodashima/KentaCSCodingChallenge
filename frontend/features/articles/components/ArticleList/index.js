@@ -8,14 +8,14 @@ import ArticleItem from '../ArticleItem';
  * @param { Object } articles - Article objects fetched from database.
 */
 const ArticleList = ({ articles }) => {
-  const renderItems = () => {
+  const _renderItems = () => {
     return articles.map((article) => {
-      return <ArticleItem />
+      return <ArticleItem key={article.id} article={article} />
     })
   }
   return (
     <div className='article-list-container'>
-      Display some articles here!
+      {articles && _renderItems()}
     </div>
   )
 };
