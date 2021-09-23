@@ -6,10 +6,21 @@ import { sortOptions } from './sortOptions';
 
 /**
  * Props:
+ * @param { string } inputValue - The current search bar value.
  * @param { Function } onChange - A function to get called whenever the search bar value changes.
+ * @param { string } selectValue - The current select value.
+ * @param { Function } onSelectionChange - A function to get called whenever the select value changes.
  * @param { Function } onFormSubmit - A function to get called on form submission.
 */
-const SearchBar = ({ onFormSubmit, onChange }) => {
+const SearchBar = (props) => {
+  const {
+    onFormSubmit,
+    onChange,
+    onSelectionChange,
+    selectValue,
+    inputValue
+  } = props
+
   /**
    * Render options.
    * You can add a new obj inside sortOptions.js when you want to have another option.
@@ -36,6 +47,7 @@ const SearchBar = ({ onFormSubmit, onChange }) => {
           <input
             className='searchbar'
             onChange={onChange}
+            value={inputValue}
           />
           <button className='icon-btn'>
             <FontAwesomeIcon icon={faSearch} />
@@ -43,7 +55,11 @@ const SearchBar = ({ onFormSubmit, onChange }) => {
         </form>
       </div>
       <div className='sort-block'>
-        <select className='sort-select'>
+        <select
+          className='sort-select'
+          onChange={onSelectionChange}
+          value={selectValue}
+        >
           {_renderSortOptions()}
         </select>
       </div>
