@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom'
 
 import { convertDateToUTC, formatMonth } from '../../../../utils/dateHelper'
@@ -11,6 +11,20 @@ const BASE_URL = process.env.REACT_APP_BASE_SERVER_URL
  *    if there are needs for similar styled components in the future.
  * */
 const ArticleItem = ({ article }) => {
+  const [imgPadding, setImgPadding] = useState(0)
+  
+  /**
+   * A ref to pass to the .text-block div.
+   * All it does is calculate the padding of the image and set the property.
+  */
+  const textBlockRef = useCallback((node) => {
+    if (node) {
+      const divHeight = node.getBoundingClientRect().height;
+      const padding = divHeight * 0.4;
+      setImgPadding(padding)
+    };
+  });
+
   const _formatDateToDisplay = (dateString) => {
     const UTCDate = convertDateToUTC(new Date(dateString))
     const monthString = formatMonth(UTCDate.getMonth())
@@ -30,10 +44,13 @@ const ArticleItem = ({ article }) => {
     author,
     created_at
   } = article
+
+  const textBlockStyle = { paddingTop: imgPadding }
+
   return (
     <div className='article-item-container'>
       <span className='separator'></span>
-      <div className='text-block'>
+      <div className='text-block' ref={textBlockRef}>
         <h2 className='article-title'>{title}</h2>
         <p className='article-subtitle'>
           <span className='subtitle-name'>
@@ -53,7 +70,7 @@ const ArticleItem = ({ article }) => {
           Read more
         </Link>
       </div>
-      <div className='img-block'>
+      <div className='img-block' style={textBlockStyle}>
         <img src={image_url} />
       </div>
     </div>
