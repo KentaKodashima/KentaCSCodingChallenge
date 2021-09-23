@@ -28,6 +28,7 @@ const ArticleItem = ({ article }) => {
   } = article
   return (
     <div className='article-item-container'>
+      <span className='separator'></span>
       <div className='text-block'>
         <h2 className='article-title'>{title}</h2>
         <p className='article-subtitle'>{`${_formatAuthorName(author)} | ${_formatDateToDisplay(created_at)}`}</p>
@@ -37,7 +38,7 @@ const ArticleItem = ({ article }) => {
         </a>
       </div>
       <div className='img-block'>
-
+        <img src={image_url} />
       </div>
     </div>
   )
