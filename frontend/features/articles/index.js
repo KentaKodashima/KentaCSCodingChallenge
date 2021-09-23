@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchArticles } from '../../actions'
-import { ArticleList } from './components/'
+import { ArticleList, SearchBar } from './components/'
 
 /**
  * An article
@@ -36,6 +36,7 @@ const Articles = ({ fetchArticles, articles: fetchedArticles }) => {
   
   return (
     <div className='articles-container'>
+      <SearchBar />
       {fetchArticles && <ArticleList articles={articles} />}
     </div>
   )

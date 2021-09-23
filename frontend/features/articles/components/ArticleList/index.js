@@ -13,6 +13,7 @@ const ArticleList = ({ articles }) => {
       return <ArticleItem key={article.id} article={article} />
     })
   }
+  
   return (
     <div className='article-list-container'>
       {articles && _renderItems()}

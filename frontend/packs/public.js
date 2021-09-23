@@ -8,7 +8,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 // Components
 import Home from "home/components/Home";
 import Article from '../features/articles';
-import ArticleList from "articles/components/ArticleList";
 
 // Routes
 const ROOT = "/";
