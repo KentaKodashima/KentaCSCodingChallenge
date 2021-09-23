@@ -3,7 +3,6 @@
 ## Notes
 - I could not get the info such as pixels and colors from the design, so I just guessed sizes and spaces, and used color picker browser extension to get the color.
 
-
 ## My Considerations
 I have been working with Typescript and styled-components for a long time, so this project structure was new to me. But I tried my best to analize the project structure and coding style to fit my code into the project very well.
 
@@ -24,6 +23,13 @@ $ bin/rails db:setup
 ```
 
 Step 3. Run the app
+```
+$ npm run client
+$ npm run server
+```
+
+or
+
 ```
 $ bin/rails s
 $ bin/webpack-dev-server

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+import axios from "axios";
 
 import { getRequest } from '../../utils/requestHelper'
-
-const BASE_URL = process.env.REACT_APP_BASE_SERVER_URL
 
 const ArticleDetail = () => {
   const { id } = useParams();
@@ -14,14 +13,14 @@ const ArticleDetail = () => {
   },[]);
 
   const _fetchArticle = async () => {
-    // TODO: See if I can fix the CORS error on the frontend.
-    const response = await getRequest(`${BASE_URL}/api/articles/${id}`);
-    console.log(response, 'resp');
+    const response = await getRequest(`/api/articles/${id}`);
+    setArticle(response)
   };
 
   return (
     <div className="article-detail-container">
-      
+      <p>Welcome to the detail page.</p>
+      <p>{article && article.body}</p>
     </div>
   );
 };

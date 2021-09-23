@@ -1,6 +1,10 @@
 {
   "name": "civilspace_challenge",
   "private": true,
+  "scripts": {
+    "client": "bin/rails s",
+    "server": "bin/webpack-dev-server"
+  },
   "dependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-transform-regenerator": "^7.14.5",

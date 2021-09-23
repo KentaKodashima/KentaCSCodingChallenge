@@ -8,7 +8,7 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL
  * @param { Object? } payload - The payload to pass as parameters for the request.
  * @returns { Promise<any> } - Returns the response of the HTTP request.
  */
-export const getRequest = async (route, payload) => {
+export const getRequest = async (route) => {
   const instace = axios.create({
     baseURL: SERVER_URL,
   })
