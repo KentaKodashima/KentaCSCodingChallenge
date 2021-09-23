@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('./Lato-OTF/Lato-Reg.otf') format('opentype'),
+       url('./Lato-TTF/Lato-Reg.ttf') format('truetype'),
+       url('./Lato-OTF/Lato-RegIta.otf') format('opentype'),
+       url('./Lato-TTF/Lato-RegIta.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./Lato-OTF/Lato-Lig.otf') format('opentype'),
+       url('./Lato-TTF/Lato-Lig.ttf') format('truetype'),
+       url('./Lato-OTF/Lato-LigIta.otf') format('opentype'),
+       url('./Lato-TTF/Lato-LigIta.ttf') format('truetype');
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./Lato-OTF/Lato-Bol.otf') format('opentype'),
+       url('./Lato-TTF/Lato-Bol.ttf') format('truetype'),
+       url('./Lato-OTF/Lato-BolIta.otf') format('opentype'),
+       url('./Lato-TTF/Lato-BolIta.ttf') format('truetype');
+  font-weight: bold;
+}

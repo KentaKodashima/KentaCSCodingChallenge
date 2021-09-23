@@ -1,0 +1,16 @@
+@import "./variables";
+
+html {
+  font-size: $fsBase;
+}
+
+body {
+  font-size: $fsRegular;
+  color: $colorTheme;
+  font-family: $ffBase;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}

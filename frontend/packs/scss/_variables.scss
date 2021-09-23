@@ -1,0 +1,31 @@
+// Colors
+$colorWhite: #fff;
+$colorBlack: #000;
+$colorTheme: #555c62;
+$colorSubTheme: #ECF0F1;
+$colorWhiteWithOpacity: rgba(255,255,255, 0.8);
+
+// Font Sizes
+$fsBase: 10px;
+$fsRegular: 1.6rem;
+
+// Sizes
+$widthBtn: 180px;
+$heightBtn: 44px;
+
+// Font family
+$ffBase: 'PT Serif', serif;
+$ffSansSerif: 'Lato', sans-serif;
+
+// Media Queries
+$breakpMobilePortrait-min: 320px;
+$breakpMobilePortrait-max: 480px;
+
+$breakpMobileLnad-min: 481px;
+$breakpMobileLand-max: 600px;
+
+$breakpTablet-min: 601px;
+$breakpTablet-max: 960px;
+
+$breakpPc-min: 961px;
+$breakpPc-max: 1024px;

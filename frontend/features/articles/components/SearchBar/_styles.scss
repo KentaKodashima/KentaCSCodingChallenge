@@ -1,0 +1,34 @@
+.searchbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px 60px;
+  background-color: $colorSubTheme;
+
+  .searchbar-block {
+    display: block;
+    position: relative;
+    width: 55%;
+
+    .searchbar {
+      box-sizing: border-box;
+      padding: 8px;
+      width: 100%;
+    }
+
+    .icon-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+  .sort-block {
+    .sort-select {
+      padding: 8px;
+      width: 200px;
+    }
+  }
+}

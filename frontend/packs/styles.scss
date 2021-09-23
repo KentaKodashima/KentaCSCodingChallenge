@@ -1,1 +1,19 @@
+// Fonts
+// @import "../fonts/LatoOFL/path";
+// @import "../fonts/material-design-iconic-font/scss/path";
+// @import "../fonts/pt-serif/path";
+@import "./fonts";
+
+// Common styles
+@import "./scss/variables";
+@import "./scss/base";
+
+// Home
 @import "../features/home/components/Home/styles";
+
+// Articles
+@import "../features/articles/components/SearchBar/styles";
+@import "../features/articles/styles";
+@import "../features/articles/components/ArticleList/styles";
+@import "../features/articles/components/ArticleItem/styles";
+@import "../features/article-detail/styles";
