@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-import { sortOptions } from './sortOptions'
+import { sortOptions } from './sortOptions';
 
-const SearchBar = () => {
-  const [] = useState('')
-
+/**
+ * Props:
+ * @param { Function } onChange - A function to get called whenever the search bar value changes.
+ * @param { Function } onFormSubmit - A function to get called on form submission.
+*/
+const SearchBar = ({ onFormSubmit, onChange }) => {
   /**
    * Render options.
    * You can add a new obj inside sortOptions.js when you want to have another option.
@@ -25,8 +28,15 @@ const SearchBar = () => {
   return (
     <div className="searchbar-container">
       <div className='searchbar-block'>
-        <form>
-          <input className='searchbar' />
+        <form
+          name='search-bar-form'
+          method='GET'
+          onSubmit={onFormSubmit}
+        >
+          <input
+            className='searchbar'
+            onChange={onChange}
+          />
           <button className='icon-btn'>
             <FontAwesomeIcon icon={faSearch} />
           </button>

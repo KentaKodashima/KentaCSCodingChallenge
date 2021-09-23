@@ -25,28 +25,49 @@ import { ArticleList, SearchBar } from './components/'
 */
 const Articles = ({ fetchArticles, articles: fetchedArticles }) => {
   const [articles, setArticles] = useState(null)
+  const [searchValue, setSearchValue] = useState('')
 
   useEffect(() => {
-    fetchArticles()  
-  },[])
+    fetchArticles();
+  },[]);
 
   useEffect(() => {
-    setArticles(fetchedArticles)
-  },[fetchedArticles])
+    setArticles(fetchedArticles);
+  },[fetchedArticles]);
+
+  /**
+   * A callback to be called whenever the search bar value changes.
+   * @param { ChangeEvent<HTMLInputElement> } e - HTML input change event
+  */
+  const onSearchBarChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  /**
+   * A callback to be called on form submission.
+   * @param { FormEvent<HTMLFormElement> } e - HTML Form submission event
+  */
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    fetchArticles(searchValue);
+  };
   
   return (
     <div className='articles-container'>
-      <SearchBar />
+      <SearchBar
+        onChange={onSearchBarChange}
+        onFormSubmit={onFormSubmit}
+      />
       {fetchArticles && <ArticleList articles={articles} />}
     </div>
-  )
-}
+  );
+};
 
 const mapStateToProps = (state) => ({
   articles: state.articles
-})
+});
 
 export default connect(
   mapStateToProps,
   { fetchArticles }
-)(Articles)
+)(Articles);
