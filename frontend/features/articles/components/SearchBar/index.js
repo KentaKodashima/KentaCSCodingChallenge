@@ -49,7 +49,7 @@ const SearchBar = (props) => {
             onChange={onChange}
             value={inputValue}
           />
-          <button className='icon-btn'>
+          <button className='icon-btn' type='submit'>
             <FontAwesomeIcon icon={faSearch} />
           </button>
         </form>
