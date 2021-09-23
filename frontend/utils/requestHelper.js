@@ -12,9 +12,7 @@ export const getRequest = async (route, payload) => {
   const instace = axios.create({
     baseURL: SERVER_URL,
   })
-  const response = await instace.get(route, {
-    withCredentials: true,
-  })
+  const response = await instace.get(route)
   return response.data
 }
 
@@ -29,9 +27,7 @@ export const postRequest = async (route, payload) => {
     const instace = axios.create({
       baseURL: SERVER_URL,
     })
-    const response = await instace.post(route, payload, {
-      withCredentials: true
-    })
+    const response = await instace.post(route, payload)
     return response.data
   } catch (e) {
     return e.message

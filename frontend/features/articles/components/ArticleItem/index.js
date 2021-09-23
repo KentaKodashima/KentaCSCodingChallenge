@@ -35,7 +35,15 @@ const ArticleItem = ({ article }) => {
       <span className='separator'></span>
       <div className='text-block'>
         <h2 className='article-title'>{title}</h2>
-        <p className='article-subtitle'>{`${_formatAuthorName(author)} | ${_formatDateToDisplay(created_at)}`}</p>
+        <p className='article-subtitle'>
+          <span className='subtitle-name'>
+            {_formatAuthorName(author)} 
+          </span>
+          |
+          <span className='subtitle-date'>
+            {_formatDateToDisplay(created_at)}
+          </span>
+        </p>
         <p className='article-intro'>{introduction}</p>
         <Link
           className='read-more-btn'

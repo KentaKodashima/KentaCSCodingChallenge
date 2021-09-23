@@ -16,13 +16,26 @@
     padding: 80px 24px 60px 0;
 
     .article-title {
+      font-family: $ffSansSerif;
+      font-weight: bold;
       font-size: 32px !important;
+      letter-spacing: -1px;
       margin-bottom: 24px;
       margin-top: 0;
     }
   
     .article-subtitle {
+      font-family: $ffSansSerif;
+      font-weight: 400;
       margin-bottom: 24px;
+
+      .subtitle-name {
+        margin-right: 12px;
+      }
+
+      .subtitle-date {
+        margin-left: 12px;
+      }
     }
 
     .article-intro {
@@ -49,6 +62,8 @@
   }
 
   .img-block {
+    // TODO: If I have enough time, replace this hard coded value with dynamic value.
+    // Get the height of the component and calculate the space size.
     padding-top: 200px;
 
     img {
